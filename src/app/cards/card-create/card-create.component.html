@@ -1,3 +1,10 @@
-<div id="card-create">
-    
+<div id="card-create" (ngSubmit)="onSubmit()">
+    <form [formGroup]="cardForm">
+        <label>
+            Title:
+            <input type="text" formControlName="title">
+        </label>
+
+        <button type="submit"></button>
+    </form>
 </div>

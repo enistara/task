@@ -1,10 +1,10 @@
-<div class="card">
+<div class="card" *ngIf="card">
   <div class="card-header">
       <img width="100px" src="/assets/images/angular-logo.svg" />
       <h1>{{ card.title }}</h1>
   </div>
 
-  <div class="card-actions">
+  <div class="card-actions" *ngIf="showActions">
     <button id="view" routerLink="detail/{{card.id}}">View</button>
     <button id="remove" (click)="removeCard(card)">Remove</button>
   </div>

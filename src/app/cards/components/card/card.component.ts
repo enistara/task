@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Card } from '../../models/card';
 
 @Component({
@@ -8,6 +8,9 @@ import { Card } from '../../models/card';
 })
 export class CardComponent {
   
+  @Input("showActions")
+  public showActions: boolean = true;
+
   @Input("card")
   public card: Card;
 

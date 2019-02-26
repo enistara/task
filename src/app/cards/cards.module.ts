@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CardsRoutingModule } from './cards-routing.module';
 import { CardsComponent } from './cards.component';
@@ -16,7 +17,8 @@ import { CardComponent } from './components/card/card.component';
   ],
   imports: [
     CommonModule,
-    CardsRoutingModule
+    CardsRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class CardsModule { }

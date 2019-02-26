@@ -4,7 +4,10 @@
 </div>
 
 <ng-template #allCards>
-    <app-card *ngFor="let card of cards" [card]="card" (removeCard)="removeCard($event)"></app-card>
+    <app-card *ngFor="let card of cards"
+     [card]="card" 
+     (removeCard)="removeCard($event)">
+    </app-card>
 </ng-template>
 
 <ng-template #noCardsMessage>
