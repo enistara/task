@@ -1,4 +1,5 @@
 <div id="cards" *ngIf="cards">
+    <button id="card-create-button" routerLink="create">Create</button>
     <div *ngIf="cards.length > 0; then allCards else noCardsMessage"></div>
 </div>
 
