@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CardService } from './card.service';
+import { Card } from './models/card';
 
 @Component({
   selector: 'app-cards',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit {
+  public cards: Card[];
 
-  constructor() { }
+  constructor(private _cardService: CardService) { }
 
   ngOnInit() {
+    this._cardService.getCards().subscribe(response => this.cards = response);
   }
-
 }
