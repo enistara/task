@@ -5,7 +5,7 @@
   </div>
 
   <div class="card-actions">
-    <button id="view">View</button>
-    <button id="remove">Remove</button>
+    <button id="view" [routerLink]="detail/1">View</button>
+    <button id="remove" (click)="removeCard(card)">Remove</button>
   </div>
 </div>

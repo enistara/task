@@ -1,3 +1,11 @@
 <div id="cards" *ngIf="cards">
-    <app-card *ngFor="let card of cards" [card]="card"></app-card>
+    <div *ngIf="cards.length > 0; then allCards else noCardsMessage"></div>
 </div>
+
+<ng-template #allCards>
+    <app-card *ngFor="let card of cards" [card]="card" (removeCard)="removeCard($event)"></app-card>
+</ng-template>
+
+<ng-template #noCardsMessage>
+    <h1>No entries.</h1>
+</ng-template>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Card } from '../../models/card';
 
 @Component({
@@ -6,15 +6,16 @@ import { Card } from '../../models/card';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   
   @Input("card")
   public card: Card;
 
-  constructor() { }
+  @Output("removeCard")
+  public removeCardEmitter: EventEmitter<Card> = new EventEmitter<Card>();
 
-  ngOnInit() {
-    
+  public removeCard(card: Card) {
+   this.removeCardEmitter.emit(card);
   }
   
 }

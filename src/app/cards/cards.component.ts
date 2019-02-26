@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CardService } from './card.service';
+import { CardService } from './services/card.service';
 import { Card } from './models/card';
 
 @Component({
@@ -14,5 +14,9 @@ export class CardsComponent implements OnInit {
 
   ngOnInit() {
     this._cardService.getCards().subscribe(response => this.cards = response);
+  }
+
+  removeCard(card) {
+    this.cards.splice(card, 1);
   }
 }
